@@ -1,0 +1,27 @@
+[project]
+name = "crowdin-ai"
+version = "0.1.0"
+description = "使用 ChatGPT 一键翻译 Crowdin 项目"
+authors = [
+    {name = "YunShu", email = "im@yunshu.site"},
+]
+dependencies = [
+    "crowdin-api-client>=1.14.1",
+    "openai>=1.11.1",
+    "dynaconf>=3.2.4",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm.scripts]
+_.env_file = ".env"
+dev = {call = "crowdin_ai.__main__:main"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
