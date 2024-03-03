@@ -9,11 +9,15 @@ dependencies = [
     "crowdin-api-client>=1.14.1",
     "openai>=1.11.1",
     "dynaconf>=3.2.4",
+    "notebook>=7.1.1",
+    "python-dotenv>=1.0.1",
 ]
 requires-python = ">=3.11"
 readme = "README.md"
 license = {text = "MIT"}
 
+[tool.pdm]
+distribution = true
 [tool.pdm.scripts]
 _.env_file = ".env"
 dev = {call = "crowdin_ai.__main__:main"}
@@ -21,7 +25,3 @@ dev = {call = "crowdin_ai.__main__:main"}
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
-
-
-[tool.pdm]
-distribution = true
